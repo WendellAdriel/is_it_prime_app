@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Is_It_Prime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is It Prime?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE1-kZ-LQw">
+                                <rect key="frame" x="116" y="28" width="144" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Aky-EO-9Pz"/>
+                                    <constraint firstAttribute="width" constant="144" id="dlW-wf-1eE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a positive number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVO-b1-K63">
+                                <rect key="frame" x="97" y="73" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. 5, 10 or 30" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUA-Rg-SEW">
+                                <rect key="frame" x="16" y="119" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8r-T7-ufN">
+                                <rect key="frame" x="150" y="177" width="75" height="30"/>
+                                <state key="normal" title="Is it prime?"/>
+                                <connections>
+                                    <action selector="isItPrime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYY-0e-UH5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8r-iO-kc5">
+                                <rect key="frame" x="16" y="241" width="343" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="F1L-ba-2cz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PE1-kZ-LQw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1nT-Ty-1Fe"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5uv-UV-tbv"/>
+                            <constraint firstItem="HUA-Rg-SEW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AdE-Xg-hAw"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DL5-aN-CVy"/>
+                            <constraint firstItem="p8r-T7-ufN" firstAttribute="top" secondItem="HUA-Rg-SEW" secondAttribute="bottom" constant="28" id="Fdz-HH-7Lz"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fja-wX-78v"/>
+                            <constraint firstItem="p8r-T7-ufN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JUs-kw-7dn"/>
+                            <constraint firstItem="HUA-Rg-SEW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oau-Kp-M1K"/>
+                            <constraint firstItem="PE1-kZ-LQw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QcJ-S5-r8Y"/>
+                            <constraint firstItem="p8r-T7-ufN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U8T-Km-9XW"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="W92-Tc-EPb"/>
+                            <constraint firstItem="HUA-Rg-SEW" firstAttribute="top" secondItem="ZVO-b1-K63" secondAttribute="bottom" constant="25" id="XFW-88-tRY"/>
+                            <constraint firstItem="ZVO-b1-K63" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zxd-G2-FJ9"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="az7-bL-gZT"/>
+                            <constraint firstItem="PE1-kZ-LQw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cv4-Sg-khI"/>
+                            <constraint firstItem="ZVO-b1-K63" firstAttribute="top" secondItem="PE1-kZ-LQw" secondAttribute="bottom" constant="8" id="e17-9s-NHv"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="top" secondItem="p8r-T7-ufN" secondAttribute="bottom" constant="34" id="eQm-t9-ORF"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="top" secondItem="p8r-T7-ufN" secondAttribute="bottom" constant="34" id="ezE-2M-cQq"/>
+                            <constraint firstItem="PE1-kZ-LQw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fHO-CH-gB3"/>
+                            <constraint firstItem="h8r-iO-kc5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="sS3-jw-xdJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numberInput" destination="HUA-Rg-SEW" id="fdm-m3-VqD"/>
+                        <outlet property="resultLabel" destination="h8r-iO-kc5" id="9UX-vZ-PQt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-80.799999999999997" y="138.0809595202399"/>
         </scene>
     </scenes>
 </document>
